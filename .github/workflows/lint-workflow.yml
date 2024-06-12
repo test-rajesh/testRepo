@@ -1,0 +1,27 @@
+name: Lint Code
+
+on:
+  push:
+    branches:
+      - master
+
+  pull_request:
+    branches:
+      - master
+jobs:
+  lint-code:
+    name: Lint Code
+    runs-on: [self-hosted, office]
+    steps:
+      - uses: actions/checkout@v4.1.6
+
+      - uses: actions/setup-node@v4.0.2
+        with:
+          node-version: "16"
+
+      - name: Installing Dependencies
+        run: npm ci
+
+      - name: Lint Source
+        id: lint_source
+        run: npm run lint
