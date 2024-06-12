@@ -11,7 +11,7 @@ on:
 jobs:
   lint-code:
     name: Lint Code
-    runs-on: [self-hosted, office]
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4.1.6
 
