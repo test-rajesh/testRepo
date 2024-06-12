@@ -3,11 +3,11 @@ name: Lint Code
 on:
   push:
     branches:
-      - master
+      - '*'
 
   pull_request:
     branches:
-      - master
+     - '*'
 jobs:
   lint-code:
     name: Lint Code
